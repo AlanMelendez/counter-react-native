@@ -20,8 +20,13 @@ export default function Fab({
   return (
     <Pressable
       style={
-        (styles.floatingButton,
-        position == "right" ? styles.positionRight : styles.positionLeft)
+        ({pressed}) =>
+            [
+                styles.floatingButton,
+                position == "right" ? styles.positionRight : styles.positionLeft,
+                pressed ? {backgroundColor: '#65558f'} : {backgroundColor: '#65258f'}
+            ]
+        
       }
       onPress={onPress}
       onLongPress={onLongPress}

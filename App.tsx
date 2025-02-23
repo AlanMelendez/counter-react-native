@@ -12,9 +12,11 @@ export default function App() {
       <Text style={styles.textSyle}>{count}</Text>
 
 
-      <Fab label='-1' onPress={()=> setCount(count+1)} onLongPress={()=> setCount(0)} position='left' />
 
       <Fab label='+1' onPress={()=> setCount(count+1)} onLongPress={()=> setCount(0)} />
+
+      <Fab label='-1' onPress={()=> setCount(count == 0 ? 0 : count-1)} onLongPress={()=> setCount(0)} position='left' />
+
 
       <StatusBar style="auto" />
     </View>
